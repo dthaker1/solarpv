@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,152 +60,79 @@
     </nav>
     <!-- Close Header -->
 
-<!-- Start Contact Form -->
-<div class="col-lg-12 p-4">
-    <h2 class="text-center my-4 text-secondary">Register Here!</h2>
-    <form action="/register/" method="post">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Submit">
-    </form>
-    <!-- <form name="registration" class="contact-form row" method="post" onSubmit="return formValidation();" role="form">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+        body {
+          font-family: Arial;
+        }
+        
+        * {
+          box-sizing: border-box;
+        }
+        
+        form.example input[type=text] {
+          padding: 10px;
+          font-size: 17px;
+          border: 1px solid grey;
+          float: left;
+          width: 80%;
+          background: #f1f1f1;
+        }
+        
+        form.example button {
+          float: left;
+          width: 20%;
+          padding: 10px;
+          background: #2196F3;
+          color: white;
+          font-size: 17px;
+          border: 1px solid grey;
+          border-left: none;
+          cursor: pointer;
+        }
+        
+        form.example button:hover {
+          background: #0b7dda;
+        }
+        
+        form.example::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+        </style>
+        </head>
+        <body>
+        
+        
+        <br>
+        <br>
+        <br>
+        <br>
 
-        <div class="col-lg-4 mb-4">
-            <div class="form-floating">
-                <input type="text" class="form-control form-control-lg light-300" id="floatingname" name="first_name" placeholder="First Name">
-                <label for="floatingname light-300">First Name</label>
-            </div>
-        </div>
-        <div class="col-lg-4 mb-4">
-            <div class="form-floating">
-                <input type="text" class="form-control form-control-lg light-300" id="floatingname" name="last_name" placeholder="Last Name">
-                <label for="floatingname light-300">Last Name</label>
-            </div>
-        </div>
-
-        <div class="col-lg-4 mb-4">
-            <div class="form-floating">
-                <input type="text" class="form-control form-control-lg light-300" id="floatingname" name="middle_name" placeholder="Middle Name">
-                <label for="floatingname light-300">Middle Name</label>
-            </div>
-        </div>
-
-        <div class="col-lg-4 mb-4">
-            <div class="form-floating">
-                <input type="text" class="form-control form-control-lg light-300" id="floatingemail" name="username" placeholder="Username">
-                <label for="floatingemail light-300">Username</label>
-            </div>
-        </div>
-
-        <div class="col-lg-4 mb-4">
-            <div class="form-floating">
-                <input type="email" class="form-control form-control-lg light-300" id="floatingemail" name="email" placeholder="Email">
-                <label for="floatingemail light-300">Email</label>
-            </div>
-        </div>>
-
-        <div class="col-lg-4 mb-4">
-            <div class="form-floating">
-                <input type="password" class="form-control form-control-lg light-300" id="floatingemail" name="password" placeholder="Password">
-                <label for="floatingemail light-300">Password</label>
-            </div>
-        </div>
-
-        <div class="col-lg-3 mb-4">
-            <div class="form-check">
-                <p>Gender:</p>
-            </div>
-        </div>
-
-        <div class="col-lg-3 mb-4">
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                    Male
-                </label>
-            </div>
-        </div>
-        <div class="col-lg-3 mb-4">
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault2">
-                <label class="form-check-label" for="flexRadioDefault1">
-                    Female
-                </label>
-            </div>
-        </div>
-        <div class="col-lg-3 mb-4">
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault3">
-                <label class="form-check-label" for="flexRadioDefault1">
-                    Other
-                </label>
-            </div>
-        </div>
-
-        <div class="col-lg-3 mb-4">
-            <div class="form-floating">
-                <input type="text" class="form-control form-control-lg light-300" id="floatingphone" name="inputphone" placeholder="Phone">
-                <label for="floatingphone light-300">Phone</label>
-            </div>
-        </div>
-
-        <div class="col-lg-3 mb-4">
-            <div class="form-floating">
-                <input type="text" class="form-control form-control-lg light-300" id="floatingphone" name="inputphone" placeholder="Country of Origin">
-                <label for="floatingphone light-300">Country of Origin</label>
-            </div>
-        </div>
-
-        <div class="col-lg-3 mb-4">
-            <div class="form-floating">
-                <input type="text" class="form-control form-control-lg light-300" id="floatingphone" name="inputphone" placeholder="Date of Birth">
-                <label for="floatingphone light-300">Date of Birth</label>
-            </div>
-        </div>
-
-        <div class="col-lg-3 mb-4">
-            <div class="form-floating">
-                <input type="text" class="form-control form-control-lg light-300" id="floatingcompany" name="inputcompany" placeholder="Company Name">
-                <label for="floatingcompany light-300">Company Name</label>
-            </div>
-        </div>
-
-        <div class="col-lg-5">
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control form-control-lg light-300" id="floatingaddress" name="inputaddress" placeholder="Street Address">
-                <label for="floatingtextarea light-300">Street Address</label>
-            </div>
-        </div>
-
-        <div class="col-lg-3">
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control form-control-lg light-300" id="floatingcity" name="inputcity" placeholder="City">
-                <label for="floatingtextarea light-300">City</label>
-            </div>
-        </div>
-
-        <div class="col-lg-2">
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control form-control-lg light-300" id="floatingstate" name="inputstate" placeholder="State">
-                <label for="floatingtextarea light-300">State</label>
-            </div>
-        </div><
-
-        <div class="col-lg-2">
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control form-control-lg light-300" id="floatingzipcode" name="inputzipcode" placeholder="Zipcode">
-                <label for="floatingtextarea light-300">Zipcode</label>
-            </div>
-        </div>
-
-        <div class="col-md-12 col-12 m-auto text-center mt-4">
-            <button type="submit" class="btn btn-secondary rounded-pill px-md-5 px-4 py-2 radius-0 text-light light-600">Register</button>
-        </div>
-
-    </form> -->
-</div>
-<!-- End Contact Form -->
-
+        <p align= 'center'>Search Certificate:</p>
+        <form method = "POST" class="example" action="/certificate/" style="margin:auto;max-width:300px">
+            {% csrf_token %}
+          <input type="text" placeholder="Search.." name="search2">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+        <br>
+        <br>
+        <br>
+        <br>
+        {% if notfound %}
+            <p>No Results found</p>
+        {% endif %}
+        {% for each in cert %}
+            <li>certificate id : {{ each.id }}</li>
+            <li>certificate number : {{ each.certnumber }}</li>
+            <li>report number id : {{ each.reportnumber }}</li>
+            <li>certificate issue date : {{ each.cert_issue_date }}</li>
+            <br>
+        {% endfor %}
+        </body>
     <!-- Start Footer -->
     <footer class="bg-secondary pt-4">
         <div class="container">

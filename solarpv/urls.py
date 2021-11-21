@@ -21,8 +21,10 @@ from . import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("register/", views.register),
+    path("login/", views.login),
     path("home/", views.home),
     path("manufacturer/", views.manufacturer),
-    path('api/', include('courses.api.url', namespace='api')),
-    path('api/', include('backend.api.url', namespace='api'))
+    path("certificate/", views.certificate, name="certificate"),
+    path("api/", include("courses.api.url", namespace="api")),
+    path("api/", include("backend.api.url", namespace="api")),
 ]

@@ -10,14 +10,16 @@ class Client(models.Model):
 
 class User(models.Model):
     userid = models.IntegerField(primary_key=True)
-    clientid = models.ForeignKey(Client, on_delete=models.CASCADE)
+    usertype = models.CharField(default="client", max_length=100)
     firstname = models.CharField(max_length=100)
     lastname = models.CharField(max_length=100)
     middlename = models.CharField(max_length=100)
+    username = models.CharField(max_length=100)
     jobtitle = models.CharField(max_length=100)
     email = models.EmailField()
-    officephone = models.IntegerField()
-    cellphone = models.IntegerField()
+    password = models.CharField(default="qwerty123", max_length=100)
+    officephone = models.IntegerField(blank=True, null=True)
+    cellphone = models.IntegerField(blank=True, null=True)
 
 
 class Location(models.Model):
@@ -78,10 +80,10 @@ class Product(models.Model):
 
 class Certificate(models.Model):
     id = models.AutoField(primary_key=True)
-    certnumber = models.IntegerField()
+    certnumber = models.CharField(max_length=100)
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
-    reportnumber = models.IntegerField()
-    contactid = models.IntegerField()
+    reportnumber = models.CharField(max_length=100)
+    contactid = models.CharField(max_length=100)
     teststandard = models.ForeignKey(TestStandard, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     cert_issue_date = models.CharField(max_length=30)
